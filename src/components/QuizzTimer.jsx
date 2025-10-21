@@ -9,13 +9,13 @@ function QuizzTimer({ timeout, onTimeout }) {
     return () => {
       clearTimeout(timeoutVariable);
     };
-  }, [onTimeout, timeout]);
+  }, [timeout, onTimeout]);
 
   useEffect(() => {
     console.log("SETTING INTERVAL");
     const interval = setInterval(() => {
-      setRemainingTime((prevTime) => prevTime - 10, 100);
-    });
+      setRemainingTime((prevTime) => prevTime - 100);
+    }, 100);
     return () => {
       clearInterval(interval);
     };
